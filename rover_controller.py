@@ -46,14 +46,16 @@ class RoverController(object):
             result.append(r.execute_path())
         return result
 
-    def attach_rover(self, Rover):
-        self.rovers.append(Rover)
+    def attach_rover(self, r):
+        if self.is_valid_position(r.pos):
+            self.rovers.append(r)
+        else:
+            raise ValueError('Rovers positions conflict')
 
-    def can_move(self, pos):
+    def is_valid_position(self, pos):
         res = True
         if pos['x'] > self.pl_limits['x'] or pos['y'] > self.pl_limits['y']:
             res = False
-            print(1)
             return res
         for r in self.rovers:
             if pos['x'] == r.get_pos()['x'] and pos['y'] == r.get_pos()['y']:

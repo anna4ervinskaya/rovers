@@ -10,7 +10,7 @@ class TestMain(unittest.TestCase):
     def test_rover_left(self, r_c):
 
         controller_ins = MagicMock()
-        controller_ins.can_move.return_value = True
+        controller_ins.is_valid_position.return_value = True
         r_c.return_value = controller_ins
 
         position = ['1', '2', 'N']
@@ -26,7 +26,7 @@ class TestMain(unittest.TestCase):
     def test_rover_right(self, r_c):
 
         controller_ins = MagicMock()
-        controller_ins.can_move.return_value = True
+        controller_ins.is_valid_position.return_value = True
         r_c.return_value = controller_ins
 
         position = ['1', '2', 'N']
@@ -42,7 +42,7 @@ class TestMain(unittest.TestCase):
     def test_rover_move(self, r_c):
 
         controller_ins = MagicMock()
-        controller_ins.can_move.return_value = True
+        controller_ins.is_valid_position.return_value = True
         r_c.return_value = controller_ins
 
         position = ['1', '2', 'N']
@@ -58,7 +58,7 @@ class TestMain(unittest.TestCase):
     def test_rover_execute(self, r_c):
 
         controller_ins = MagicMock()
-        controller_ins.can_move.return_value = True
+        controller_ins.is_valid_position.return_value = True
         r_c.return_value = controller_ins
 
         position = ['1', '2', 'N']

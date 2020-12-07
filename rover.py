@@ -39,7 +39,7 @@ class Rover(object):
         m = MOVES_CONF[self.pos['f']]
         next_pos = dict(self.pos)
         next_pos[m[0]] += m[1]
-        if self.controller.can_move(next_pos):
+        if self.controller.is_valid_position(next_pos):
             self.pos = next_pos
         else:
             raise ValueError('Rovers positions conflict')
